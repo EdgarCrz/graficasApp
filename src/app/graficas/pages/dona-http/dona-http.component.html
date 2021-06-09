@@ -1,0 +1,31 @@
+<h1>Redes sociales más usadas</h1>
+<hr />
+
+<div
+  class="alert alert-info"
+  *ngIf="doughnutChartData.length === 0; else divGrafica"
+>
+  Cargando data...
+</div>
+<!-- este clase de bootstrap es un recudro con un mensaje -->
+
+<div class="row">
+  <div class="col">
+    <ng-template #divGrafica>
+      <div style="display: block">
+        <canvas
+          baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          [colors]="colors"
+        >
+        </canvas>
+      </div>
+      <span class="float-end text-primary"
+        >Informacion en billones de usuarios</span
+      >
+    </ng-template>
+    <!-- ng template solo es un contenedor, para manejar nuestra estructura, no es como un div, literal solo es un contenedor para poder maniobrar nuestros elementos -->
+  </div>
+</div>

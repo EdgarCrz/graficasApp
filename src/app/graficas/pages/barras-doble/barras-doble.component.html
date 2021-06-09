@@ -1,0 +1,21 @@
+<h1>Gráficas Dobles</h1>
+<hr />
+<div class="row">
+  <div class="col-md-6">
+    <app-grafica-barra
+      [horizontal]="true"
+      [barChartData]="productoData"
+      [barChartLabels]="proveedoresLabels"
+    ></app-grafica-barra>
+    <!-- [horizonal]="true" estoy referenciando a una propiedad "horizontal" y en este caso le estamos asignndo el valor de true -->
+    <!-- pero ojo que esta propiedad se encuentra en su componente hijo del cual proviene la grafica -->
+    <!-- [barChartData] es una propiedad del componente hijo del que proviene la grafica, y la vamos a llenar con la info que su padre le esta mandando osea con la propiedad "productoData" -->
+    <!-- [barChartLabels] es una propiedad del componente hijo del que proviene la grafica, y la vamos a llenar con la info que su padre le esta mandando osea con la propiedad "proveedoresLabels" -->
+  </div>
+  <div class="col-md-6">
+    <app-grafica-barra
+      [barChartData]="proveedoresData"
+      [barChartLabels]="proveedoresLabels"
+    ></app-grafica-barra>
+  </div>
+</div>
